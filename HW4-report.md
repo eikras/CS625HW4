@@ -46,7 +46,134 @@ These trends are very similar to the "first births" charts.
 ### Python Code
 
 ```{python}
+import pandas as pd
+import seaborn.objects as so
+import matplotlib.pyplot as plt
+import numpy as np
 
+from google.colab import drive
+
+data91FB = pd.DataFrame(pd.read_excel("/content/drive/MyDrive/DataCS625HW4/FirstBirth.xlsx"))
+data91TB = pd.DataFrame(pd.read_excel("/content/drive/MyDrive/DataCS625HW4/TotalBirth.xlsx"))
+data92 = pd.DataFrame(pd.read_excel('https://www2.census.gov/library/publications/2010/compendia/statab/129ed/tables/10s0092.xls'))
+
+data91FB = data91FB.apply(pd.to_numeric, errors='coerce')
+data91FB = data91FB.transpose()
+
+data91FB['Years'] = data91FB.index
+
+years = data91FB['Years'].tolist()
+years.pop(0)
+
+total = data91FB[0].tolist()
+total.pop(0)
+
+y15to19 = data91FB[2].tolist()
+y15to19.pop(0)
+
+y20to24 = data91FB[3].tolist()
+y20to24.pop(0)
+
+y25to29 = data91FB[4].tolist()
+y25to29.pop(0)
+
+y30to34 = data91FB[6].tolist()
+y30to34.pop(0)
+
+y35to39 = data91FB[7].tolist()
+y35to39.pop(0)
+
+y40to44 = data91FB[8].tolist()
+y40to44.pop(0)
+
+f = plt.figure(1)
+#totalplt = plt.plot(years, total, label = 'Total')  # Plot the chart
+y1519plt = plt.plot(years, y15to19, label = '15 to 19 yo')  # Plot the chart
+y2024plt = plt.plot(years, y20to24, label = '20 to 24 yo')  # Plot the chart
+y2529plt = plt.plot(years, y25to29, label = '25 to 29 yo')  # Plot the chart
+y3034plt = plt.plot(years, y30to34, label = '30 to 34 yo')  # Plot the chart
+y3539plt = plt.plot(years, y35to39, label = '35 to 39 yo')  # Plot the chart
+y4044plt = plt.plot(years, y40to44, label = '40 to 44 yo')  # Plot the chart
+plt.xticks(rotation=90, ha='right')
+leg = plt.legend(loc='center right', bbox_to_anchor=(1.3, 0.5))
+plt.xlabel('Year')
+plt.ylabel('Number of Births')
+plt.title('First Births per 1,000 Women')
+f.show()  # display
+
+g = plt.figure(2)
+y1519plt = plt.plot(years, y15to19, label = '15 to 19 yo')  # Plot the chart
+y2024plt = plt.plot(years, y20to24, label = '20 to 24 yo')  # Plot the chart
+y2529plt = plt.plot(years, y25to29, label = '25 to 29 yo')  # Plot the chart
+y3034plt = plt.plot(years, y30to34, label = '30 to 34 yo')  # Plot the chart
+y3539plt = plt.plot(years, y35to39, label = '35 to 39 yo')  # Plot the chart
+y4044plt = plt.plot(years, y40to44, label = '40 to 44 yo')  # Plot the chart
+totalplt = plt.plot(years, total, label = 'Total')  # Plot the chart
+plt.xticks(rotation=90, ha='right')
+leg = plt.legend(loc='center right', bbox_to_anchor=(1.3, 0.5))
+plt.xlabel('Year')
+plt.ylabel('Number of Births')
+plt.title('First Births per 1,000 Women')
+g.show()  # display
+
+data91TB = data91TB.apply(pd.to_numeric, errors='coerce')
+data91TB = data91TB.transpose()
+
+data91TB['Years'] = data91TB.index
+
+years = data91TB['Years'].tolist()
+years.pop(0)
+
+total = data91TB[0].tolist()
+total.pop(0)
+
+y15to19 = data91TB[2].tolist()
+y15to19.pop(0)
+
+y20to24 = data91TB[3].tolist()
+y20to24.pop(0)
+
+y25to29 = data91TB[4].tolist()
+y25to29.pop(0)
+
+y30to34 = data91TB[6].tolist()
+y30to34.pop(0)
+
+y35to39 = data91TB[7].tolist()
+y35to39.pop(0)
+
+y40to44 = data91TB[8].tolist()
+y40to44.pop(0)
+
+h = plt.figure(3)
+#totalplt = plt.plot(years, total, label = 'Total')  # Plot the chart
+y1519plt = plt.plot(years, y15to19, label = '15 to 19 yo')  # Plot the chart
+y2024plt = plt.plot(years, y20to24, label = '20 to 24 yo')  # Plot the chart
+y2529plt = plt.plot(years, y25to29, label = '25 to 29 yo')  # Plot the chart
+y3034plt = plt.plot(years, y30to34, label = '30 to 34 yo')  # Plot the chart
+y3539plt = plt.plot(years, y35to39, label = '35 to 39 yo')  # Plot the chart
+y4044plt = plt.plot(years, y40to44, label = '40 to 44 yo')  # Plot the chart
+plt.xticks(rotation=90, ha='right')
+leg = plt.legend(loc='center right', bbox_to_anchor=(1.3, 0.5))
+plt.xlabel('Year')
+plt.ylabel('Number of Births')
+plt.title('Total Births per 1,000 Women')
+h.show()  # display
+
+k = plt.figure(4)
+y1519plt = plt.plot(years, y15to19, label = '15 to 19 yo')  # Plot the chart
+y2024plt = plt.plot(years, y20to24, label = '20 to 24 yo')  # Plot the chart
+y2529plt = plt.plot(years, y25to29, label = '25 to 29 yo')  # Plot the chart
+y3034plt = plt.plot(years, y30to34, label = '30 to 34 yo')  # Plot the chart
+y3539plt = plt.plot(years, y35to39, label = '35 to 39 yo')  # Plot the chart
+y4044plt = plt.plot(years, y40to44, label = '40 to 44 yo')  # Plot the chart
+totalplt = plt.plot(years, total, label = 'Total')  # Plot the chart
+plt.xticks(rotation=90, ha='right')
+leg = plt.legend(loc='center right', bbox_to_anchor=(1.3, 0.5))
+plt.xlabel('Year')
+plt.ylabel('Number of Births')
+plt.title('Total Births per 1,000 Women')
+k.show()  # display
 ```
 
 ## Conclusion
