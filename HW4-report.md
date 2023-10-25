@@ -180,8 +180,9 @@ k.show()  # display
 
 In conslusion, this data shows us that women are waiting longer to have children. The 30s are seeming more like the 20s when it comes to the time of first births and total births. The overall birth rate is also decreseing as less women are per 1000 women are having children. 
 
+## Further Study
 
-
+For future studies, we can look into factors such as income, inflation, health statistics and education for women that may be playing into these trends of having fewer children / having children later in life. I think that all these factors play into the decision to have children. Women want to be more financially stable before having children to high inflation rates will decrease the urgency to have children. Women may choose to finish their higher level education before having children which pusses back when they start trying for children. Additionally, people may be in better health later in life or have more access to medical tools/methods to help conceive at later ages. I think all these play a big factor in these trends.
 
 ## References
 
